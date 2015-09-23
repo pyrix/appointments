@@ -25,18 +25,23 @@ class Example extends REST_Controller
         	$this->response(NULL, 400);
         }
 
-        // $user = $this->some_model->getSomething( $this->get('id') );
+        //$user = $this->some_model->getSomething( $this->get('id') );
+        $this->load->model('user_model');
+        $users = $this->user_model->get_batch('');
+
+        /*
     	$users = array(
 			1 => array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com', 'fact' => 'Loves swimming'),
 			2 => array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com', 'fact' => 'Has a huge face'),
 			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => 'Is a Scott!'),
 		);
-		
-    	$user = @$users[$this->get('id')];
+		*/
+
+    	//$user = @$users[$this->get('id')];
     	
-        if($user)
+        if($users)
         {
-            $this->response($user, 200); // 200 being the HTTP response code
+            $this->response($users, 200); // 200 being the HTTP response code
         }
 
         else
@@ -63,13 +68,20 @@ class Example extends REST_Controller
     
     function users_get()
     {
-        //$users = $this->some_model->getSomething( $this->get('limit') );
-        $users = array(
-			array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com'),
-			array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com'),
-			array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com'),
+        //$user = $this->some_model->getSomething( $this->get('id') );
+        $this->load->model('user_model');
+        $users = $this->user_model->get_batch('');
+
+        /*
+    	$users = array(
+			1 => array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com', 'fact' => 'Loves swimming'),
+			2 => array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com', 'fact' => 'Has a huge face'),
+			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => 'Is a Scott!'),
 		);
-        
+		*/
+
+        //$user = @$users[$this->get('id')];
+
         if($users)
         {
             $this->response($users, 200); // 200 being the HTTP response code
@@ -77,7 +89,7 @@ class Example extends REST_Controller
 
         else
         {
-            $this->response(array('error' => 'Couldn\'t find any users!'), 404);
+            $this->response(array('error' => 'User could not be found'), 404);
         }
     }
 
@@ -109,6 +121,31 @@ class Example extends REST_Controller
             echo json_encode(array(
                 'exceptions' => array(exceptionToJavaScript($exc))
             ));
+        }
+    }
+
+
+    //get all from service with new price from id=2
+    function services_by_id_get() {
+
+
+        if(!$this->get('id'))
+        {
+            $this->response(NULL, 400);
+        }
+
+        $this->load->model('services_model');
+        $service = $this->services_model->get_service_by_id($this->get('id'));
+
+
+        if($service)
+        {
+            $this->response($service, 200); // 200 being the HTTP response code
+        }
+
+        else
+        {
+            $this->response(array('error' => 'Services list could not be found'), 404);
         }
     }
 }

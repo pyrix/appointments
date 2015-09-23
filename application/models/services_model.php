@@ -352,7 +352,20 @@ class Services_Model extends CI_Model {
         }
             
     }
-}
 
+    /**
+     * Return all service values + the new price from the service provider table
+     */
+    public function get_service_by_id($service_id) {
+            return $this->db
+                    ->select('ea_services.name AS name, ea_services.duration AS duration, '
+                            . 'ea_services_providers.price AS price')
+                    ->from('ea_services')
+                    ->join('ea_services_providers', 
+                            'ea_services_providers.id_services = ea_services.id')
+                    ->where('ea_services_providers.id_services' , $service_id)
+                    ->get()->result_array(); 
+    }
+}
 /* End of file services_model.php */
 /* Location: ./application/models/services_model.php */

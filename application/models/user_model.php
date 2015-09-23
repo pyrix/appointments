@@ -134,6 +134,43 @@ class User_Model extends CI_Model {
         
         return $new_password;
     }
+
+
+    public function get_batch($where_clause = '') {
+        // CI db class may confuse two where clauses made in the same time, so
+        // get the role id first and then apply the get_batch() where clause.
+        $role_id = $this->get_users_role_id();
+
+        if ($where_clause != '') {
+            $this->db->where($where_clause);
+        }
+
+        $batch = $this->db->get_where('ea_users',
+            array('id_roles' => $role_id))->result_array();
+
+        // Include each provider sevices and settings.
+        foreach($batch as &$user) {
+            // Services
+            $services = $this->db->get_where('ea_services_providers',
+                array('id_users' => $user['id']))->result_array();
+            $user['services'] = array();
+            foreach($services as $service) {
+                $user['services'][] = $service['id_services'];
+            }
+
+            // Settings
+            $user['settings'] = $this->db->get_where('ea_user_settings',
+                array('id_users' => $user['id']))->row_array();
+            unset($user['settings']['id_users']);
+        }
+
+        // Return provider records in an array.
+        return $batch;
+    }
+
+    public function get_users_role_id() {
+        return $this->db->get_where('ea_roles', array('slug' => DB_SLUG_CUSTOMER))->row()->id;
+    }
 }
 
 /* End of file user_model.php */

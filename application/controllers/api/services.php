@@ -16,35 +16,33 @@
 // This can be removed if you use __autoload() in config.php OR use Modular Extensions
 require APPPATH.'/libraries/REST_Controller.php';
 
-class Providers extends REST_Controller {
+class Services extends REST_Controller {
 
     function all_get() {
 
-        $this->load->model('providers_model');
-        $providers = $this->providers_model->get_batch('');
+        $this->load->model('services_model');
+        $services = $this->services_model->get_batch('');
 
-        if($providers)
+        if($services)
         {
-            $this->response($providers, 200); // 200 being the HTTP response code
+            $this->response($services, 200); // 200 being the HTTP response code
         }
 
         else
         {
-            $this->response(array('error' => 'Couldn\'t find any providers!'), 404);
+            $this->response(array('error' => 'Couldn\'t find any services!'), 404);
         }
     }
 
-    //Get a specific provider by id
+    //Get a specific service by id
     function by_id_get() {
 
         if(empty($this->get('id'))) {
             $this->response(array('error' => 'Bad request!'), 400);
         }
 
-        $this->response($this->get());
-
-        $this->load->model('providers_model');
-        $service = $this->providers_model->get_provider_by_filter($this->get('id'));
+        $this->load->model('services_model');
+        $service = $this->services_model->get_service_by_id($this->get('id'));
 
 
         if($service) {
