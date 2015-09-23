@@ -41,14 +41,31 @@ class Providers extends REST_Controller {
             $this->response(array('error' => 'Bad request!'), 400);
         }
 
-        $this->response($this->get());
+        $this->load->model('providers_model');
+        $provider = $this->providers_model->get_provider_by_id($this->get('id'));
+
+
+        if($provider) {
+            $this->response($provider, 200); // 200 being the HTTP response code
+        }
+        else {
+            $this->response(array('error' => 'This service could not be found'), 404);
+        }
+    }
+
+    //Get a specific provider by price
+    function by_price_get() {
+
+        if(empty($this->get('price'))) {
+            $this->response(array('error' => 'Bad request!'), 400);
+        }
 
         $this->load->model('providers_model');
-        $service = $this->providers_model->get_provider_by_filter($this->get('id'));
+        $providers = $this->providers_model->get_providers_by_price($this->get('price'));
 
 
-        if($service) {
-            $this->response($service, 200); // 200 being the HTTP response code
+        if($providers) {
+            $this->response($providers, 200); // 200 being the HTTP response code
         }
         else {
             $this->response(array('error' => 'This service could not be found'), 404);

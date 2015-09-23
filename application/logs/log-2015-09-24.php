@@ -873,3 +873,282 @@ DEBUG - 2015-09-24 00:57:56 --> Controller Class Initialized
 DEBUG - 2015-09-24 00:57:56 --> Config file loaded: application/config/rest.php
 DEBUG - 2015-09-24 00:57:56 --> Helper loaded: inflector_helper
 DEBUG - 2015-09-24 00:57:56 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:13 --> Config Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:13:13 --> URI Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Router Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Output Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Security Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Input Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:13:13 --> Language Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:13:13 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:13:13 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:13:13 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:13:13 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:13:13 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:13 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:13 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:34 --> Config Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:13:34 --> URI Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Router Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Output Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Security Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Input Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:13:34 --> Language Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:13:34 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:13:34 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:13:34 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:13:34 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:13:34 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:34 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:34 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:35 --> Config Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:13:35 --> URI Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Router Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Output Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Security Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Input Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:13:35 --> Language Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:13:35 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:13:35 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:13:35 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:13:35 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:13:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:35 --> Config Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:13:35 --> URI Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Router Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Output Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Security Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Input Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:13:35 --> Language Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:13:35 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:13:35 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:13:35 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:13:35 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:13:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:13:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:13:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:14:03 --> Config Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:14:03 --> URI Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Router Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Output Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Security Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Input Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:14:03 --> Language Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:14:03 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:14:03 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:14:03 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:14:03 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:14:03 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:14:03 --> Model Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Model Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:14:03 --> Config Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:14:03 --> URI Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Router Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Output Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Security Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Input Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:14:03 --> Language Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:14:03 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:14:03 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:14:03 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:14:03 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:14:03 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:14:03 --> Model Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> Model Class Initialized
+DEBUG - 2015-09-24 01:14:03 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:14:29 --> Config Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:14:29 --> URI Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Router Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Output Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Security Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Input Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:14:29 --> Language Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:14:29 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:14:29 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:14:29 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:14:29 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:14:29 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:14:39 --> Config Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:14:39 --> URI Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Router Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Output Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Security Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Input Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:14:39 --> Language Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:14:39 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:14:39 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:14:39 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:14:39 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:14:39 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:14:39 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:14:41 --> Config Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:14:41 --> URI Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Router Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Output Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Security Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Input Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:14:41 --> Language Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:14:41 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:14:41 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:14:41 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:14:41 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:14:41 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:14:41 --> Model Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> Model Class Initialized
+DEBUG - 2015-09-24 01:14:41 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:34 --> Config Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:15:34 --> URI Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Router Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Output Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Security Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Input Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:15:34 --> Language Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:15:34 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:15:34 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:15:34 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:15:34 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:15:34 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:34 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:34 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:35 --> Config Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:15:35 --> URI Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Router Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Output Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Security Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Input Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:15:35 --> Language Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:15:35 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:15:35 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:15:35 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:15:35 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:15:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:35 --> Config Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:15:35 --> URI Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Router Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Output Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Security Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Input Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:15:35 --> Language Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:15:35 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:15:35 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:15:35 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:15:35 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:15:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:35 --> Config Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Hooks Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Utf8 Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> UTF-8 Support Enabled
+DEBUG - 2015-09-24 01:15:35 --> URI Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Router Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Output Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Security Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Input Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-24 01:15:35 --> Language Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Loader Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Helper loaded: custom_exceptions_helper
+DEBUG - 2015-09-24 01:15:35 --> Database Driver Class Initialized
+ERROR - 2015-09-24 01:15:35 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/appointments/system/database/drivers/mysql/mysql_driver.php 91
+DEBUG - 2015-09-24 01:15:35 --> Controller Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Config file loaded: application/config/rest.php
+DEBUG - 2015-09-24 01:15:35 --> Helper loaded: inflector_helper
+DEBUG - 2015-09-24 01:15:35 --> XSS Filtering completed
+DEBUG - 2015-09-24 01:15:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> Model Class Initialized
+DEBUG - 2015-09-24 01:15:35 --> XSS Filtering completed

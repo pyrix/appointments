@@ -554,6 +554,32 @@ class Providers_Model extends CI_Model {
                 array('username' => $username, 'id_users <> ' => $user_id))->num_rows();
         return ($num_rows > 0) ? FALSE : TRUE;
     }
+
+    /**
+     * Return a specific provider by an ID
+     */
+    public function get_provider_by_id($provider_id) {
+        return $this->db
+            ->select('ea_users.*')
+            ->from('ea_users')
+            ->join('ea_services_providers',
+                'ea_services_providers.id_users = ea_users.id')
+            ->where('ea_services_providers.id_users' , $provider_id)
+            ->get()->result_array();
+    }
+
+    /**
+     * Return a list of providers by price
+     */
+    public function get_providers_by_price($price) {
+        return $this->db
+            ->select('ea_users.*')
+            ->from('ea_users')
+            ->join('ea_services_providers',
+                'ea_services_providers.id_users = ea_users.id')
+            ->where('ea_services_providers.price' , $price)
+            ->get()->result_array();
+    }
 }
 
 /* End of file providers_model.php */
