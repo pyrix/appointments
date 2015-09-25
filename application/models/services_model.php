@@ -354,16 +354,33 @@ class Services_Model extends CI_Model {
     }
 
     /**
+     * Get all services from a specific category.
+     *
+     * @param array $id Contains the category id.
+     * @return bool Returns the validation result.
+     */
+    public function get_services_by_category_id($id) {
+        return $this->db
+            ->select('ea_services.name AS name, ea_services.id as id')
+            ->from('ea_services')
+            ->join('ea_service_categories',
+                'ea_service_categories.id = ea_services.id_service_categories')
+            ->where('ea_service_categories.id' , $id)
+            ->get()->result_array();
+    }
+
+
+    /**
      * Return all service values + the new price from the service provider table
      */
-    public function get_service_by_id($service_id) {
+    public function get_service_by_id($id) {
             return $this->db
                     ->select('ea_services.name AS name, ea_services.duration AS duration, '
                             . 'ea_services_providers.price AS price')
                     ->from('ea_services')
                     ->join('ea_services_providers', 
                             'ea_services_providers.id_services = ea_services.id')
-                    ->where('ea_services_providers.id_services' , $service_id)
+                    ->where('ea_services_providers.id_services' , $id)
                     ->get()->result_array(); 
     }
 }

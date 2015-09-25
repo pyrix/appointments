@@ -99,7 +99,9 @@ class Appointments extends CI_Controller {
                 $post_data = json_decode($_POST['post_data'], true);
                 $appointment = $post_data['appointment'];
                 $customer = $post_data['customer'];
-
+               
+                
+                
                 if ($this->customers_model->exists($customer)) 
                         $customer['id'] = $this->customers_model->find_record_id($customer);
 					
@@ -111,6 +113,15 @@ class Appointments extends CI_Controller {
                 
                 $provider = $this->providers_model->get_row($appointment['id_users_provider']);
                 $service = $this->services_model->get_row($appointment['id_services']);
+                
+                 
+                
+                print_r($appointment);
+                print_r($customer);
+                echo $appointment['id'].' </br>'; 
+                echo 'cid '.$customer_id;
+                
+                
                 
                 $company_settings = array( 
                     'company_name'  => $this->settings_model->get_setting('company_name'),

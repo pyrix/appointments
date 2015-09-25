@@ -18,18 +18,23 @@ require APPPATH.'/libraries/REST_Controller.php';
 
 class Providers extends REST_Controller {
 
+    function __construct() {
+
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS, DELETE");
+        parent::__construct();
+    }
+
+    //Get all providers
     function all_get() {
 
         $this->load->model('providers_model');
         $providers = $this->providers_model->get_batch('');
 
-        if($providers)
-        {
+        if($providers) {
             $this->response($providers, 200); // 200 being the HTTP response code
         }
-
-        else
-        {
+        else {
             $this->response(array('error' => 'Couldn\'t find any providers!'), 404);
         }
     }
@@ -53,6 +58,25 @@ class Providers extends REST_Controller {
         }
     }
 
+    //Get a specific provider by id
+    function by_category_id_get() {
+
+        if(empty($this->get('id'))) {
+            $this->response(array('error' => 'Bad request!'), 400);
+        }
+
+        $this->load->model('providers_model');
+        $provider = $this->providers_model->get_provider_by_category_id($this->get('id'));
+
+
+        if($provider) {
+            $this->response($provider, 200); // 200 being the HTTP response code
+        }
+        else {
+            $this->response(array('error' => 'There is no provider associated with that category!'), 404);
+        }
+    }
+
     //Get a specific provider by price
     function by_price_get() {
 
@@ -68,7 +92,7 @@ class Providers extends REST_Controller {
             $this->response($providers, 200); // 200 being the HTTP response code
         }
         else {
-            $this->response(array('error' => 'This service could not be found'), 404);
+            $this->response(array('error' => 'There is no provider with the current price'), 404);
         }
     }
 }

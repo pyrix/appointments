@@ -580,6 +580,20 @@ class Providers_Model extends CI_Model {
             ->where('ea_services_providers.price' , $price)
             ->get()->result_array();
     }
+
+    /**
+     * Return a specific provider by a category ID
+     */
+    public function get_provider_by_category_id($id) {
+        return $this->db
+            ->select('s.first_name as provider_name, s.id as provider_id, d.name as category_name, d.id as category_id')
+            ->from  ('ea_users s')
+            ->join  ('ea_services_providers b', 's.id = b.id_users')
+            ->join  ('ea_services c' , 'b.id_services  = c.id')
+            ->join  ('ea_service_categories d' , 'c.id_service_categories = d.id')
+            ->where ('d.id =' . $id)
+            ->get()->result_array();
+    }
 }
 
 /* End of file providers_model.php */
