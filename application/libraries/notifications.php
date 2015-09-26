@@ -1,7 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');  
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require_once dirname(__FILE__) . '/external/class.phpmailer.php';
-
+//require_once APPPATH . '/libraries/external/phpmailer.php';
+require_once APPPATH . '/libraries/external/mail/PHPMailerAutoload.php';
 /**
  * This library handles all the notification email deliveries 
  * on the system.
@@ -60,6 +60,7 @@ class Notifications {
      * @param string $receiver_address The receiver email address.
      * @return bool Returns the operation result.
      */
+    /*
     public function send_appointment_details($appointment_data, $provider_data, $service_data, 
             $customer_data, $company_settings, $title, $message, $appointment_link, 
             $receiver_address) {
@@ -116,6 +117,78 @@ class Notifications {
                     . __LINE__ . '): ' . $mail->ErrorInfo);
         }
         
+        return TRUE;
+    }
+    */
+
+    public function send_appointment_details($appointment_data, $provider_data, $service_data,
+                                             $customer_data, $company_settings, $title, $message, $appointment_link,
+                                             $receiver_address) {
+
+        // :: PREPARE THE EMAIL TEMPLATE REPLACE ARRAY
+        $replace_array = array(
+            '$email_title'              => $title,
+            '$email_message'            => $message,
+
+            '$appointment_service'      => $service_data['name'],
+            '$appointment_provider'     => $provider_data['first_name'] . ' ' . $provider_data['last_name'],
+            '$appointment_start_date'   => date('d/m/Y H:i', strtotime($appointment_data['start_datetime'])),
+            '$appointment_end_date'     => date('d/m/Y H:i', strtotime($appointment_data['end_datetime'])),
+            '$appointment_link'         => $appointment_link,
+
+            '$company_link'             => $company_settings['company_link'],
+            '$company_name'             => $company_settings['company_name'],
+
+            '$customer_name'            => $customer_data['first_name'] . ' ' . $customer_data['last_name'],
+            '$customer_email'           => $customer_data['email'],
+            '$customer_phone'           => $customer_data['phone_number'],
+            '$customer_address'         => $customer_data['address'],
+
+            // Translations
+            'Appointment Details' => $this->ci->lang->line('appointment_details_title'),
+            'Service' => $this->ci->lang->line('service'),
+            'Provider' => $this->ci->lang->line('provider'),
+            'Start' => $this->ci->lang->line('start'),
+            'End' => $this->ci->lang->line('end'),
+            'Customer Details' => $this->ci->lang->line('customer_details_title'),
+            'Name' => $this->ci->lang->line('name'),
+            'Email' => $this->ci->lang->line('email'),
+            'Phone' => $this->ci->lang->line('phone'),
+            'Address' => $this->ci->lang->line('address'),
+            'Appointment Link' => $this->ci->lang->line('appointment_link_title')
+        );
+
+        $email_html = file_get_contents(dirname(dirname(__FILE__))
+            . '/views/emails/appointment_details.php');
+        $email_html = $this->replace_template_variables($replace_array, $email_html);
+
+        // :: INSTANTIATE EMAIL OBJECT AND SEND EMAIL
+        $mail = new PHPMailer();
+        $mail->IsSMTP(); // Use SMTP
+        $mail->Host        = "smtp.gmail.com"; // Sets SMTP server for gmail
+        $mail->SMTPDebug   = 0; // 2 to enable SMTP debug information
+        $mail->SMTPAuth    = TRUE; // enable SMTP authentication
+        $mail->SMTPSecure  = "tls"; //Secure conection
+        $mail->Port        = 587; // set the SMTP port to gmail's port
+        $mail->Username    = MAIL_USERNAME; // gmail account username
+        $mail->Password    = MAIL_PSSWD; // gmail account password
+        $mail->Priority    = 1; // Highest priority - Email priority (1 = High, 3 = Normal, 5 =   low)
+        $mail->CharSet = 'UTF-8';
+        $mail->IsHTML(true);
+        $mail->From = MAIL_USERNAME;
+        $mail->FromName = $company_settings['company_name'];
+        $mail->AddAddress($receiver_address); // "Name" argument crushes the phpmailer class.
+        $mail->IsHTML(true);
+        $mail->CharSet = 'UTF-8';
+        $mail->Subject = $title;
+        $mail->Body    = $email_html;
+
+
+        if (!$mail->Send()) {
+            throw new Exception('Email could not been sent. Mailer Error (Line '
+                . __LINE__ . '): ' . $mail->ErrorInfo);
+        }
+
         return TRUE;
     }
     
@@ -176,10 +249,19 @@ class Notifications {
         
         // :: SETUP EMAIL OBJECT AND SEND NOTIFICATION
         $mail = new PHPMailer();
-        $mail->From         = $company_settings['company_email'];
+        $mail->IsSMTP(); // Use SMTP
+        $mail->Host        = "smtp.gmail.com"; // Sets SMTP server for gmail
+        $mail->SMTPDebug   = 0; // 2 to enable SMTP debug information
+        $mail->SMTPAuth    = TRUE; // enable SMTP authentication
+        $mail->SMTPSecure  = "tls"; //Secure conection
+        $mail->Port        = 587; // set the SMTP port to gmail's port
+        $mail->Username    = MAIL_USERNAME; // gmail account username
+        $mail->Password    = MAIL_PSSWD; // gmail account password
+        $mail->Priority    = 1; // Highest priority - Email priority (1 = High, 3 = Normal, 5 =   low)
+        $mail->IsHTML(true);
+        $mail->From = MAIL_USERNAME;
         $mail->FromName     = $company_settings['company_name'];
         $mail->AddAddress($to_address); // "Name" argument crushes the phpmailer class.
-        $mail->IsHTML(true);
         $mail->CharSet      = 'UTF-8';
         $mail->Subject      = $this->ci->lang->line('appointment_cancelled_title');
         $mail->Body         = $email_html;

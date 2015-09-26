@@ -140,7 +140,154 @@ class Example extends REST_Controller{
      * |-----------------------------------------------------------
     */
 
-    public function add_appointment_post() {
+    function add_customer_post() {
+
+        $customer_data = empty($this->post('first_name')
+            || $this->post('last_name')
+            || $this->post('email')
+            || $this->post('phone_number'))
+            ? FALSE
+            : TRUE;
+
+        try {
+            $this->load->model('user_model');
+            $this->load->model('customers_model');
+            $this->load->model('settings_model');
+
+            // :: SAVE CUSTOMER CHANGES TO DATABASE
+            if ($customer_data) {
+
+                $customer = array(
+                    'first_name'    => $this->post('first_name'),
+                    'last_name'     => $this->post('last_name'),
+                    'email'         => $this->post('email'),
+                    'phone_number'  => $this->post('phone_number'),
+                    'address'       => $this->post('address'),
+                    'city'          => $this->post('city'),
+                    'zip_code'      => $this->post('zip_code'),
+                    'notes'         => $this->post('notes'),
+                    'latitude'      => $this->post('latitude'),
+                    'longitude'     => $this->post('longitude')
+                );
+
+                $customer['id'] = $this->customers_model->add($customer);
+                $this->user_model->enable($customer['id']);
+
+                //$this->response(array('success' => 'Customer saved successfully!'), 200); // 200 being the HTTP response code
+                $this->response(array($customer['id']), 200);
+            }
+        } catch(Exception $exc) {
+            echo json_encode(array(
+                'exceptions' => array(exceptionToJavaScript($exc))
+            ));
+        }
+    }
+
+    function edit_customer_post() {
+
+        $customer_data = empty($this->post('first_name')
+            || $this->post('last_name')
+            || $this->post('email')
+            || $this->post('id')
+            || $this->post('phone_number'))
+            ? FALSE
+            : TRUE;
+
+        try {
+            $this->load->model('customers_model');
+            $this->load->model('settings_model');
+
+            // :: SAVE CUSTOMER CHANGES TO DATABASE
+            if ($customer_data) {
+
+                $customer = array(
+                    'id'            => $this->post('id'),
+                    'first_name'    => $this->post('first_name'),
+                    'last_name'     => $this->post('last_name'),
+                    'email'         => $this->post('email'),
+                    'phone_number'  => $this->post('phone_number'),
+                    'address'       => $this->post('address'),
+                    'city'          => $this->post('city'),
+                    'zip_code'      => $this->post('zip_code'),
+                    'notes'         => $this->post('notes')
+                );
+
+                $customer['id'] = $this->customers_model->update($customer);
+
+                //$this->response(array('success' => 'Customer saved successfully!'), 200); // 200 being the HTTP response code
+                $this->response(array($customer['id']), 200);
+            }
+        } catch(Exception $exc) {
+            echo json_encode(array(
+                'exceptions' => array(exceptionToJavaScript($exc))
+            ));
+        }
+    }
+
+    function disable_user_post() {
+
+        $user_data = empty($this->post('id'))
+            ? FALSE
+            : TRUE;
+
+        try {
+            $this->load->model('user_model');
+            $this->load->model('settings_model');
+
+            // :: SAVE USER CHANGES TO DATABASE
+            if ($user_data) {
+
+                $user = array(
+                    'id'    => $this->post('id'),
+                );
+
+                $user['id'] = $this->user_model->disable($user['id']);
+
+                $this->response(array('success' => 'User account disabled successfully!'), 200); // 200 being the HTTP response code
+                //$this->response(array($customer['id']), 200);
+            }
+        } catch(Exception $exc) {
+            echo json_encode(array(
+                'exceptions' => array(exceptionToJavaScript($exc))
+            ));
+        }
+    }
+
+    function enable_user_post() {
+
+        $user_data = empty($this->post('id'))
+            ? FALSE
+            : TRUE;
+
+        try {
+            $this->load->model('user_model');
+            $this->load->model('settings_model');
+
+            // :: SAVE USER CHANGES TO DATABASE
+            if ($user_data) {
+
+                $user = array(
+                    'id'    => $this->post('id'),
+                );
+
+                $user['id'] = $this->user_model->enable($user['id']);
+
+                $this->response(array('success' => 'User account enabled successfully!'), 200); // 200 being the HTTP response code
+                //$this->response(array($customer['id']), 200);
+            }
+        } catch(Exception $exc) {
+            echo json_encode(array(
+                'exceptions' => array(exceptionToJavaScript($exc))
+            ));
+        }
+    }
+
+
+
+
+
+
+    function add_appointment_post() {
 
         $customer_data = empty($this->post('first_name')
                                 || $this->post('last_name')
@@ -169,6 +316,7 @@ class Example extends REST_Controller{
                 //$customer = json_decode(stripcslashes($_POST['customer_data']), true);
 
                 $customer = array(
+                    'id'            => $this->post('id'),
                     'first_name'    => $this->post('first_name'),
                     'last_name'     => $this->post('last_name'),
                     'email'         => $this->post('email'),
@@ -178,6 +326,8 @@ class Example extends REST_Controller{
                     'zip_code'      => $this->post('zip_code'),
                     'notes'         => $this->post('notes')
                 );
+
+
 
                 $customer['id'] = $this->customers_model->add($customer);
 
@@ -193,26 +343,12 @@ class Example extends REST_Controller{
                     'id_services'       => $this->post('service'),
                     'id_users_provider' => $this->post('provider'),
                     'start_datetime'    => $this->post('start_datetime'),
-                    'end_datetime'      => $this->post('end_datetime')
+                    'end_datetime'      => $this->post('end_datetime'),
+                    'id_users_customer' => $customer['id']
                 );
-
-               /* $REQUIRED_PRIV = (!isset($appointment['id'])) ? $this->privileges[PRIV_APPOINTMENTS]['add'] : $this->privileges[PRIV_APPOINTMENTS]['edit'];
-
-                if ($REQUIRED_PRIV == FALSE) {
-                    throw new Exception('You do not have the required privileges for this task.');
-                }*/
-
-           /*     $manage_mode = isset($appointment['id']);
-                // If the appointment does not contain the customer record id, then it
-                // means that is is going to be inserted. Get the customer's record id.
-                if (!isset($appointment['id_users_customer'])) {    }*/
-                    $appointment['id_users_customer'] = $customer['id'];
-
 
                 $appointment['id'] = $this->appointments_model->add($appointment);
 
-                log_message('info' , var_dump($appointment));
-                log_message('info' , var_dump( $this->post()));
                 $this->response(array('success' => 'Appointment saved successfully!'), 200); // 200 being the HTTP response code
             }
 

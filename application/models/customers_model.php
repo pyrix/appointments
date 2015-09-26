@@ -102,18 +102,19 @@ class Customers_Model extends CI_Model {
      * data. Each key has the same name with the database fields.
      * @return int Returns the updated record id.
      */
-    private function update($customer) {        
+    private function update($customer)
+    {
         // Do not update empty string values.
         foreach ($customer as $key => $value) {
-            if ($value === '') 
+            if ($value === '')
                 unset($customer[$key]);
         }
-        
+
         $this->db->where('id', $customer['id']);
         if (!$this->db->update('ea_users', $customer)) {
             throw new Exception('Could not update customer to the database.');
         }
-        
+
         return intval($customer['id']);
     }
     

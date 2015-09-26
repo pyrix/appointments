@@ -72,5 +72,17 @@ define('PRIV_SYSTEM_SETTINGS', 'system_settings');
 define('PRIV_USER_SETTINGS', 'user_settings');
 
 define('MIN_PASSWORD_LENGTH', 7);
+
+//---------- USER CONSTANTS --------//
+define('ENABLED_ACCOUNT', 1);
+define('DISABLED_ACCOUNT', 0);
+
+//--------- ENVIRONMENT SETTINGS -----//
+define('MAIL_NOTIFICATIONS', TRUE);
+
+//--------- MAIL SETTINGS ----------//
+define('MAIL_USERNAME', 'appointmentshua@gmail.com');
+define('MAIL_PSSWD', 'appointmentshua123456');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

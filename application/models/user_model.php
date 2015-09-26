@@ -171,6 +171,60 @@ class User_Model extends CI_Model {
     public function get_users_role_id() {
         return $this->db->get_where('ea_roles', array('slug' => DB_SLUG_CUSTOMER))->row()->id;
     }
+
+    /**
+     * Disable an existing customer record in the database.
+     *
+     * The customer data argument should already include the record
+     * id in order to process the update operation.
+     *
+     * @param variable $id  with the customer's
+     * id. Each key has the same name with the database fields.
+     * @return int Returns the updated record id.
+     */
+    public function disable($id, $flag = TRUE) {
+
+        $data = array(
+            'status'    => DISABLED_ACCOUNT
+        );
+
+        try {
+            $this->db->where('id', $id);
+            $this->db->update('ea_users', $data);
+        } catch (Exception $ex) {
+            $ex->getMessage() . '<br>';
+            $flag = FALSE;
+        }
+
+        return $flag;
+    }
+
+    /**
+     * Enable an existing customer record in the database.
+     *
+     * The customer data argument should already include the record
+     * id in order to process the update operation.
+     *
+     * @param variable $id  with the customer's
+     * id. Each key has the same name with the database fields.
+     * @return int Returns the updated record id.
+     */
+    public function enable($id, $flag = TRUE) {
+
+        $data = array(
+            'status'    => ENABLED_ACCOUNT
+        );
+
+        try {
+            $this->db->where('id', $id);
+            $this->db->update('ea_users', $data);
+        } catch (Exception $ex) {
+            $ex->getMessage() . '<br>';
+            $flag = FALSE;
+        }
+
+        return $flag;
+    }
 }
 
 /* End of file user_model.php */
