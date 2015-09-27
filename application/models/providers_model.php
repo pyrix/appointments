@@ -465,7 +465,7 @@ class Providers_Model extends CI_Model {
      * @param string $setting_name The setting name that is going to be
      * returned.
      * @param int $provider_id The selected provider id.
-     * @return string Returs the value of the selected user setting.
+     * @return string Returns the value of the selected user setting.
      */
     public function get_setting($setting_name, $provider_id) {
         $provider_settings = $this->db->get_where('ea_user_settings', 
@@ -586,12 +586,37 @@ class Providers_Model extends CI_Model {
      */
     public function get_provider_by_category_id($id) {
         return $this->db
-            ->select('s.first_name as provider_name, s.id as provider_id, d.name as category_name, d.id as category_id')
+            ->select('s.first_name as provider_name, s.id as provider_id, d.name as category_name, d.id as category_id, b.price as price, b.duration as duration')
             ->from  ('ea_users s')
             ->join  ('ea_services_providers b', 's.id = b.id_users')
             ->join  ('ea_services c' , 'b.id_services  = c.id')
             ->join  ('ea_service_categories d' , 'c.id_service_categories = d.id')
             ->where ('d.id =' . $id)
+            ->get()->result_array();
+    }
+
+    public function get_providers_by_distance($id, $latitude, $longitude) {
+        $this->db->_protect_identifiers=false;
+        return $this->db
+            ->select('s.first_name as provider_name, s.id as provider_id, d.name as category_name, d.id as category_id, b.price as price, b.duration as duration, SQRT(POW(69.1 * (s.latitude - '. $latitude . '), 2)+POW(69.1 * (' . $longitude . ' - s.longitude) * COS(s.latitude / 57.3), 2)) as distance')
+            ->from  ('ea_users s')
+            ->join  ('ea_services_providers b', 's.id = b.id_users')
+            ->join  ('ea_services c' , 'b.id_services  = c.id')
+            ->join  ('ea_service_categories d' , 'c.id_service_categories = d.id')
+            ->where ('d.id =' . $id)
+            ->order_by('distance')
+            ->get()->result_array();
+    }
+
+    public function get_providers_by_cheapest($id) {
+        return $this->db
+            ->select('s.first_name as provider_name, s.id as provider_id, d.name as category_name, d.id as category_id, b.price as price, b.duration as duration')
+            ->from  ('ea_users s')
+            ->join  ('ea_services_providers b', 's.id = b.id_users')
+            ->join  ('ea_services c' , 'b.id_services  = c.id')
+            ->join  ('ea_service_categories d' , 'c.id_service_categories = d.id')
+            ->where ('d.id =' . $id)
+            ->order_by('price')
             ->get()->result_array();
     }
 }
